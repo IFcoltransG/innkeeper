@@ -201,3 +201,54 @@
 === function came_from(-> x) 
     ~ return TURNS_SINCE(x) == 0
 
+/*
+	Tests if the flow passes a particular gather "very recently" - that is, within the last 3 turns.
+
+	Usage: 
+
+	- (welcome)
+		"Welcome!"
+	- (opts)
+		*	{seen_very_recently(->welcome)}
+			"Sorry, hello, yes."
+		+	"Er, what?"
+			-> opts
+		*	"Can we get on with it?"
+		
+*/
+
+=== function seen_very_recently(-> x)
+    ~ return TURNS_SINCE(x) >= 0 && TURNS_SINCE(x) <= 3
+
+/*
+	Threads in a given flow as a tunnel, with a given location to tunnel back to. 
+
+	If choices within this content are taken, they should end with a tunnel return (->->).
+
+	Useful for "pasting in" the same block of optional content into multiple locations.
+
+	Usage: 
+
+
+	- (opts)
+		<- thread_in_tunnel(-> eat_apple, -> opts)
+		<- thread_in_tunnel(-> eat_banana, -> get_going)
+		*	[ Leave hungry ]
+			-> get_going
+
+	=== get_going
+		You leave. 
+		-> END 
+
+	=== eat_apple 
+		*	[ Eat an apple ]
+			You eat an apple. It doesn't help.
+			->->
+
+	=== eat_banana 
+		*	[ Eat a banana ]
+			You eat a banana. It's very satisfying.
+			->->
+		
+		
+*/

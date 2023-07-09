@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>It Is An Innkeeper</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="outerContainer">
+        <h3 class="written-in-ink"><a href="https://www.inklestudios.com/ink">WRITTEN IN INK</a></h3>
+
+        <div id="controls" class="buttons">
+          <a id="rewind" title="Restart story from beginning">restart</a>
+          <a id="save" title="Save progress">save</a>
+          <a id="reload" title="Reload from save point">load</a>
+          <a id="theme-switch" title="Switch theme">theme</a>
+          <a id="credits" title="Credits" onclick="credits()">credits</a>
+          <a id="toggle-music" title="Toggle music" onclick="toggleMusic()">music</a>
+        </div>
+
+        <div id="story" class="container" onclick="firstClick()">
+            <div class="header">
+                <h1>It Is An Innkeeper</h1>
+                <h2 class="byline"></h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="ink.js"></script>
+    <script src="story.js"></script>
+    <script src="main.js"></script>
+    <audio src="Anamalie.mp3" id="music" autoplay loop></audio>
+    <script>
+    function credits() {
+    	alert(`
+Created by IFcoltransG
+Using inkle's Ink, and Inkjs.
+    	
+Music: "Anamalie" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+    	`);
+    }
+    function toggleMusic() {
+    	var audio = document.getElementById('music');
+    	if (audio.paused) {
+   	        audio.play();
+   	    }
+   	    else {
+   	        audio.pause();
+   	    }
+    }
+    function firstClick() {
+    	if (document.clickedBefore) {
+    		return;
+    	}
+    	document.clickedBefore = true;
+    	document.getElementById('music').play();
+    }
+    </script>
+</body>
+</html>
