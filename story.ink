@@ -41,8 +41,8 @@ VAR l2_gear = ()
 VAR l3_gear = ()
 VAR l4_gear = ()
 
-// VAR debug = false
-VAR debug = true
+VAR debug = false
+// VAR debug = true
 
 {debug:
     ~ SEED_RANDOM(47)
