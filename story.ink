@@ -1,5 +1,6 @@
 # title: It Is An Innkeeper
 # author: IFcoltransG
+# theme: dark
 
 INCLUDE generic.ink
 INCLUDE characters.ink
