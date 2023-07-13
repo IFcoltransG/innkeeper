@@ -19,7 +19,7 @@ VAR child = false
 VAR looked_for_child = false
 VAR certainty = false
 
-VAR previous_time = morning
+VAR previous_time = evening
 
 // locations (contains adventurers)
 VAR wilderness = ()
@@ -231,7 +231,7 @@ The inn is quietening. <>
     -> watch_patrons
 + {time != night} It listens to the faces speaking to it at the bar.
     ->listen->
-    {time == night:Its stream of talkative faces is drying up for the night.|}
+    {time == night: Its stream of talkative faces is drying up for the night.|}
 - -> menu
 
 = get_time(same_time)
@@ -369,6 +369,7 @@ Actions
         The innkeeper shivers and steps closer to the fire. It asks again. It asks. It asks if they have seen its child.
             It is numb to {adventurer}'s response.
         * * * It closes the bar.
+        - - - END
             -> END
     + + {wealth !? adventurer} It shares a rumour of a {~far-off|distant} {~locale|location|site|place} with {adventurer}.
     + + + {rumours ? rd} It tells them of the small Rat Dungeon.
