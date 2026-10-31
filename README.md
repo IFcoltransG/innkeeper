@@ -1,3 +1,5 @@
+# [MIGRATED TO CODEBERG 2026-10-31](https://codeberg.org/IFcoltransG/innkeeper)
+
 # It Is An Innkeeper
 This is a melancholy, spooky, text-based interactive fiction game, created for the [GMTK Game Jam 2023](https://itch.io/jam/gmtk-2023) in 48 hours. The jam theme "Roles Reversed" guided me to tell the story of a humble innkeeper in a world where heroes venture out on quests and die. This is the story that might be told of an NPC in an MMO, while the players prance about the countryside.
 
